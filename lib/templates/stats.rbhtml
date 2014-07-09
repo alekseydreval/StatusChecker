@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script type='text/javascript' src='//code.highcharts.com/highcharts.js'></script>
+    <script type='text/javascript'>
+    $(function() {
+          $('#container').highcharts({
+              colors: ['#058DC7', '#50B432', '#ED561B'],
+              title: {
+                  text: 'Requests chart',
+                  x: -20 //center
+              },
+              xAxis: {
+                  title: {
+                      text: 'Time (s)'
+                  },
+                  categories: #{@timestamp}
+              },
+              yAxis: {
+                  title: {
+                      text: 'Requests Count'
+                  }
+              },
+              series: [{
+                  name: 'Requests Made',
+                  data: #{@total_requests}
+              }, {
+                  name: 'Successful Requests',
+                  data: #{@successful_requests}
+              }, {
+                  name: 'Failed Requests',
+                  data: #{@failed_requests}
+              }]
+          });
+    })
+    </script>
+    <title>Requsts statistics</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
