@@ -1,5 +1,5 @@
 # StatusChecker
-
+The problem it is supposed to solve: https://gist.github.com/dozenthoughts/9d99659c165fea89027b
 This service allows to check if a website is available. Availability statistcis are represented in graph.
 
 ## Cofigure and launch
